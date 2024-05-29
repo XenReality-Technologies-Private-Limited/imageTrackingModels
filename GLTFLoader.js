@@ -2,16 +2,13 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 const loader = new GLTFLoader();
 const loadedData = await loader.loadAsync(
-  "https://cdn.jsdelivr.net/gh/XenReality-Technologies-Private-Limited/imageTrackingModels@main/scene.glb"
+  "https://cdn.jsdelivr.net/gh/XenReality-Technologies-Private-Limited/imageTrackingModels@main/scene.gltf"
 );
 
-async function loadingSuccess() {
-  // inside an async function: OK!
-  await loader.loadAsync("yourModel.glb");
-}
+loader.parse(loadedData,'',function(gltf){
+	scene.add(gltf.scene);
+},function(){
+	console.log('model load error')
+});
 
-async function loadingFail() {
-  // not inside an async function: ERROR!
-  await loader.loadAsync("yourModel.glb");
-}
 
