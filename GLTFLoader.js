@@ -9,7 +9,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 const loader = new GLTFLoader();
-const url = 'https://cdn.jsdelivr.net/gh/XenReality-Technologies-Private-Limited/imageTrackingModels@main/assets/scene.gltf"'; 
+const url = 'https://cdn.jsdelivr.net/gh/XenReality-Technologies-Private-Limited/imageTrackingModels@main/assets/scene.gltf'; 
 
 loader.load(url, function(gltf) {
     scene.add(gltf.scene);
